@@ -46,7 +46,7 @@
 	   <Command.Group>
 		{#each currencies as currency}
 		 <Command.Item
-		  value={currency.code}
+		  value={currency.name + " (" + currency.code + ")"}
 		  onSelect={() => {
 			currencyData.currencyBase = currency.code;
 			currencyData.selectedBase = currency.name;
