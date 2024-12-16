@@ -10,7 +10,7 @@
 		selectedBase: "United States Dollar",
 		selectedTarget: "Singapore Dollar"
 	});
-	let baseValue = $state(null);
+	let baseValue = $state(100);
 	let targetValue = $state(null);
 	let exchangeRate = $state({
 		unit: null,
@@ -45,7 +45,7 @@
 	<div class="grid place-content-center grid-cols-3">
 		<div class="flex w-full max-w-sm flex-col gap-1.5">
 			<ComboboxBase {currencyData}/>
-			<Input type="text" id="base" placeholder="100" bind:value={baseValue} />
+			<Input type="text" id="base" bind:value={baseValue} />
 			<p class="text-muted-foreground text-sm">The currency to convert form (Base Currency).</p>
 		</div>
 		<div class="flex justify-center items-center flex-col">
@@ -54,7 +54,7 @@
 		</div>
 		<div class="flex w-full max-w-sm flex-col gap-1.5">
 			<ComboboxTarget {currencyData}/>
-			<Input type="text" id="target" placeholder="100" bind:value={targetValue} readonly/>
+			<Input type="text" id="target" bind:value={targetValue} readonly/>
 			<p class="text-muted-foreground text-sm">The currency that is converted to (Target Currency).</p>
 		</div>
 	</div>
